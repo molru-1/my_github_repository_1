@@ -54,7 +54,6 @@ def is_palindrome(s):
     # 방법1: 문자열을 뒤집어서 비교 ([::-1] 사용)
     # 방법2: 양 끝 인덱스를 이용한 투 포인터 방식
     l = l.lower()
-    print(l)
     s_3 = l[::-1]
     if(s_3 == l):
         return True
