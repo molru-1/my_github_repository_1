@@ -52,13 +52,15 @@ def find_duplicates_sorting(nums):
         return []
     
     # TODO: 배열을 정렬하세요 (nums.sort() 사용)
-
+    nums = nums.sort()
     pass
     
     duplicates = []
     
     # TODO: 인접한 원소를 비교하여 중복 찾기
     # i와 i+1 원소가 같고, duplicates에 없으면 추가
+    for i in range(len(nums)):
+        pass
     pass
     
     return duplicates
@@ -108,7 +110,7 @@ if __name__ == "__main__":
     random.seed(42)  # 동일한 결과를 위한 시드 설정
     nums2 = [random.randint(1, 500) for _ in range(1000)]
     
-    measure_time(find_duplicates_brute_force, nums2, "방법1 (O(n²))")
+    # measure_time(find_duplicates_brute_force, nums2, "방법1 (O(n²))")
     # measure_time(find_duplicates_sorting, nums2, "방법2 (O(n log n))")
     # measure_time(find_duplicates_hash, nums2, "방법3 (O(n))")
     
