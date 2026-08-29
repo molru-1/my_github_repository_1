@@ -32,6 +32,14 @@ def factorial(n):
     Returns:
         n의 팩토리얼 값
     """
+    if(n == 0):
+        return 1
+    elif(n>1):
+        result = f"{n} x {factorial(n-1)}"
+        return result
+    else:
+        return 1
+    
     # TODO: base case를 작성하세요
     # n이 0이거나 1이면 1을 반환
     pass
@@ -48,7 +56,18 @@ def fibonacci(n):
     
     Returns:
         n번째 피보나치 수
+
+    fib(n-1) + fib(n-2), fib(0) = 0, fib(1) = 1
     """
+    if(n==0):
+        return 0
+    elif(n==1):
+        return 1
+    temp = (fibonacci(n-1) + fibonacci(n-2))
+    result = []
+    result.append(temp)
+    return result
+
     # TODO: base case를 작성하세요
     # n이 0이면 0, n이 1이면 1 반환
     pass
