@@ -37,6 +37,8 @@ def find_duplicates_brute_force(nums):
     for i in range(0,n):
         for j in range(i+1,n):
             if(nums[i] == nums[j]):
+                if nums[j] in duplicates:
+                    continue
                 duplicates.append(nums[j])
     pass
     
@@ -54,16 +56,14 @@ def find_duplicates_sorting(nums):
     # TODO: 배열을 정렬하세요 (nums.sort() 사용)
     nums.sort()
     pass
-    
+
+    # TODO: 인접한 원소를 비교하여 중복 찾기
+    # i와 i+1 원소가 같고, duplicates에 없으면 추가
     duplicates = []
     for i in range(len(nums) - 1):
         if nums[i] == nums[i + 1]:
             if nums[i] not in duplicates:
                 duplicates.append(nums[i])
-
-    
-    # TODO: 인접한 원소를 비교하여 중복 찾기
-    # i와 i+1 원소가 같고, duplicates에 없으면 추가
 
     return duplicates
 
@@ -79,6 +79,12 @@ def find_duplicates_hash(nums):
     # TODO: 각 원소를 순회하면서
     ## 이미 seen에 있으면 duplicates에 추가
     ## 없으면 seen에 추가
+    for i in range(len(nums)):
+        if nums[i] in seen:
+            duplicates.add(nums[i])
+        else:
+            seen.add(nums[i])
+        pass
     pass
     
     return list(duplicates)
@@ -112,9 +118,9 @@ if __name__ == "__main__":
     random.seed(42)  # 동일한 결과를 위한 시드 설정
     nums2 = [random.randint(1, 500) for _ in range(1000)]
     
-    # measure_time(find_duplicates_brute_force, nums2, "방법1 (O(n²))")
-    # measure_time(find_duplicates_sorting, nums2, "방법2 (O(n log n))")
-    # measure_time(find_duplicates_hash, nums2, "방법3 (O(n))")
+    measure_time(find_duplicates_brute_force, nums2, "방법1 (O(n²))")
+    measure_time(find_duplicates_sorting, nums2, "방법2 (O(n log n))")
+    measure_time(find_duplicates_hash, nums2, "방법3 (O(n))")
     
     print("=== 복잡도 분석 요약 ===")
     print("방법1 - Brute Force:")
