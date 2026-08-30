@@ -53,15 +53,14 @@ def gcd_iterative(a, b):
     """
     # TODO: 반복문으로 구현
     # b가 0이 될 때까지 반복
-    for _ in range(b, 0):
-        if b == 0:
-            return 0
-        result =+ a % b
-    return result
-    
+    result = 0
+    while b <= 0:
+        if b <= 0:
+            return b
 
-    pass
-
+        result = a%b
+        result = b % result
+        
 def lcm(a, b):
     """
     최소공배수 계산
@@ -108,6 +107,7 @@ def is_prime(n):
     # n이 2보다 작으면 False
     # 2부터 sqrt(n)까지 나누어 떨어지는지 확인    
     # 3부터 sqrt(n)까지 홀수만 확인
+    
     pass 
 
 # 테스트 케이스
