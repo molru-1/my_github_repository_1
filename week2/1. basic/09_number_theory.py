@@ -94,7 +94,12 @@ def extended_gcd(a, b):
     # 역추적하며 x, y 계산
     if b == 0:
         return (a,1,0)
-    
+    gcd, x_next, y_next = extended_gcd(b, a % b)    
+    q=a//b
+    x = y_next
+    y = x_next-q*y_next
+    return (gcd,x,y)
+
     pass
 
 
