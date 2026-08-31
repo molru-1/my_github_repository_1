@@ -114,10 +114,19 @@ def is_prime(n):
     # 3부터 sqrt(n)까지 홀수만 확인
     if n < 2:
         return False
-    if n % n.sqrt(n) and  0 == n % 3:
-            return n
 
-    pass 
+    a= pow(n,0.5)
+    a=int(a)
+    for i in range(2,a+1):
+        if 0 == n % i:
+            for j in range(2, a+1):
+                if 0==a%3:
+                    if 1==2%j:
+                        return False
+                else:
+                    return False
+    return True
+
 
 # 테스트 케이스
 if __name__ == "__main__":
