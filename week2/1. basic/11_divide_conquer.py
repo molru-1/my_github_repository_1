@@ -41,22 +41,22 @@ def find_max_divide_conquer(arr, left, right):
     pass
     
     # TODO: 중간 지점 계산
-    mid = right // 2
+    mid = (right+left) // 2
     pass
     
     # TODO: 왼쪽 절반의 최댓값
-    a=find_max_divide_conquer(arr,left,mid) #이게 왜 안되는 것일까, 
+    a=find_max_divide_conquer(arr,left,mid) 
     pass
         
     # # TODO: 오른쪽 절반의 최댓값
-    b=find_max_divide_conquer(arr,mid,right)
+    b=find_max_divide_conquer(arr,mid+1,right)
     pass
     
     # # TODO: 둘 중 큰 값 반환
-    if left[a]<right[b]:
-        return arr[b]
+    if a<b:
+        return b
     else:
-        return arr[a]
+        return a
     pass
 
 # 테스트 케이스
