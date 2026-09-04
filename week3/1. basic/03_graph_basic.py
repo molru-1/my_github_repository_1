@@ -41,6 +41,11 @@ def create_graph(vertices, edges, directed=False):
         그래프 딕셔너리
     """
     # TODO: 빈 그래프 초기화
+    graph = {}
+
+    for i in range(vertices):
+        graph[i] = []
+        
     pass
     
     # TODO: 간선 추가
