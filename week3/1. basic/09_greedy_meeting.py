@@ -50,10 +50,10 @@ def select_meetings(meetings):
     # TODO: 나머지 회의들 확인
     last_end_time = meetings[0][1]
     ## 이전 회의가 끝난 후 시작하는 회의만 선택
-    for meeting in meetings[1:]:
-        if meeting[0] >= last_end_time:
-            selected.append(meeting)
-            last_end_time = meeting[1]
+    for i in meetings[1:]:
+        if i[0] >= last_end_time:
+            selected.append(i)
+            last_end_time = i[1]
 
     pass
     
